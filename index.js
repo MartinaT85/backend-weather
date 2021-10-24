@@ -7,10 +7,9 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
-app.get("/", (req, res) => res.send("Hello"))
-app.get('/location/44418/', (req, res) => {
+app.get('/location/44418/2018/4/30', (req, res) => {
   request(
-    { url: 'https://www.metaweather.com/api/location/44418/' },
+    { url: 'https://www.metaweather.com/api/location/44418/2018/4/30' },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
